@@ -14,3 +14,7 @@
 .alignright {}
 .alignleft {}
 .aligncenter {}
+
+#menu-footer-menu > li> a > span {
+    color: #212529;
+}

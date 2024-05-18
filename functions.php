@@ -2,6 +2,7 @@
 
 require_once('lib/theme-supports.php');
 require_once('lib/theme-metabox.php');
+require_once('lib/theme-customizer.php');
 
 /**
  * Register Custom Navigation Walker

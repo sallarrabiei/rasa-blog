@@ -19,7 +19,6 @@ function rasa_blog_register_menus() {
     register_nav_menus( array (
         'main-menu' => esc_html__( 'Main Menu', 'rasa-blog' ),
         'footer-menu' => esc_html__( 'Footer Menu', 'rasa-blog' ),
-        'top-menu' => esc_html__( 'Top Menu', 'rasa-blog' )
     ) );
 }
 add_action( 'after_setup_theme', 'rasa_blog_register_menus' );

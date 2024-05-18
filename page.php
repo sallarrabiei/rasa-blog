@@ -9,11 +9,14 @@
                 // Check if the custom field has a value.
                 ?>
             <div class="container px-4 py-5 border-bottom">
+                <?php if (has_post_thumbnail()) { ?>
                 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                     <div class="col-10 col-sm-8 col-lg-6">
                         <?php the_post_thumbnail('medium_large', array('class' => 'd-block mx-lg-auto img-fluid', 'width' => '700', 'height' => '500')); ?>
                     </div>
-                    <div class="col-lg-6">
+                <?php } ?>
+                    <div class="<?php if (has_post_thumbnail() ) { echo 'col-lg-6'; } else { echo 'col-lg-12'; } ?>">
+                
                         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><?php the_title() ?></h1>
                         <p class="lead">POSTED ON <?php echo '<time class="text-secondary" datetime="' . esc_attr(get_the_date('c')) . '">' . esc_html(get_the_date()) . '</time>'; ?> BY <span class="text-secondary"><?php $author_id = $post->post_author;
                         echo get_the_author_meta( 'nickname', $author_id ); ?> <span class="mx-2">|</span> 
@@ -23,7 +26,6 @@
                           <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
                         </svg>
                         <?php echo $post_views_count; ?></span></p>
-                        <span class="text-secondary border-top border-warning"><?php $categories = get_the_category(); echo esc_html( $categories[0]->name ); ?></span>
 
                     </div>
                 </div>
